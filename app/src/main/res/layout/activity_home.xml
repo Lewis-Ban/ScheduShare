@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Log Out Button -->
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp" />
+
+    <!-- Coming Event -->
+
+    <!-- Time Saved for the Event -->
+
+    <!-- Buttons for Events, Summary, and Friends -->
+
+    <TextView
+        android:id="@+id/comingEventTextView"
+        android:layout_width="345dp"
+        android:layout_height="92dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:text="Coming Event"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/timeSavedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comingEventTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="17: 30: 00"
+        android:textSize="34sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="32dp"
+        android:gravity="center|center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/eventsButton"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Events" />
+
+        <Button
+            android:id="@+id/summaryButton"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Summary" />
+
+        <Button
+            android:id="@+id/friendsButton"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Friends" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="348dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="85dp"
+        android:text="What's Coming Next"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
+
+

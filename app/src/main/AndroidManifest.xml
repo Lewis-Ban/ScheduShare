@@ -10,19 +10,41 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ScheduShare"
         tools:targetApi="31">
+
+        <!-- Login Activity -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.ScheduShare">
+            android:name=".Login"
+            android:theme="@style/Theme.ScheduShare.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Home Activity -->
+        <activity
+            android:name=".Home"
+            android:theme="@style/Theme.ScheduShare.NoActionBar" />
+
+        <!-- Events Activity -->
+        <activity
+            android:name=".EventsActivity"
+            android:theme="@style/Theme.ScheduShare.NoActionBar" />
+
+        <!-- Summary Activity -->
+        <activity
+            android:name=".SummaryActivity"
+            android:theme="@style/Theme.ScheduShare.NoActionBar" />
+
+        <!-- Friends Activity -->
+        <activity
+            android:name=".FriendsActivity"
+            android:theme="@style/Theme.ScheduShare.NoActionBar" />
+
     </application>
 
 </manifest>
+
+
