@@ -8,10 +8,13 @@
         android:id="@+id/logoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log Out"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_margin="16dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/logout_button" />
 
     <!-- Coming Event -->
 
@@ -26,7 +29,7 @@
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
-        android:text="Coming Event"
+        android:text="@string/upcoming_events_button"
         android:textAlignment="center"
         android:textSize="24sp" />
 
@@ -37,7 +40,7 @@
         android:layout_below="@id/comingEventTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
-        android:text="17: 30: 00"
+        android:text="@string/time"
         android:textSize="34sp" />
 
     <LinearLayout
@@ -50,23 +53,26 @@
 
         <Button
             android:id="@+id/eventsButton"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="Events" />
+            android:text="@string/events_button" />
 
         <Button
             android:id="@+id/summaryButton"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="Summary" />
+            android:text="@string/summary_button" />
 
         <Button
             android:id="@+id/friendsButton"
+            style="buttonBarButtonStyle"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="Friends" />
+            android:text="@string/friends_button" />
 
     </LinearLayout>
 
@@ -79,7 +85,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="31dp"
         android:layout_marginTop="85dp"
-        android:text="What's Coming Next"
+        android:text="@string/whats_coming_next_header"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="34sp"

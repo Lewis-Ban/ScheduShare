@@ -10,27 +10,32 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="52dp"
+        android:contentDescription="@string/schedushare_logo"
         android:src="@drawable/schedule_logo" />
 
     <EditText
         android:id="@+id/idEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter ID"
+        android:layout_height="48dp"
         android:layout_below="@id/logoImageView"
-        android:layout_margin="16dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/enter_id"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_below="@id/idEditText"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="7dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:hint="Enter Password"
+        android:hint="@string/enter_password"
         android:inputType="textPassword" />
 
     <Button
@@ -41,7 +46,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="16dp"
-        android:text="Login" />
+        android:text="@string/login_button" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,15 +61,15 @@
             android:layout_width="197dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:text="Need Help?"
+            android:text="@string/help_button"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/forgetTextView"
-            android:layout_width="173dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Forget ID/PW?"
+            android:text="@string/forgot_id_or_password"
             android:textAlignment="viewEnd"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
