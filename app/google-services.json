@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "396474587033",
+    "project_id": "schedushare",
+    "storage_bucket": "schedushare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396474587033:android:b41ee5c8223d107524a508",
+        "android_client_info": {
+          "package_name": "com.example.schedushare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI2ow_-ap9hCJEAZmrmMCAJ8h9xhAdHj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
