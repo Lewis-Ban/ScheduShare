@@ -1,4 +1,4 @@
-package com.example.schedushare;
+package com.example.schedushare
 
 class FriendsList {
 }
