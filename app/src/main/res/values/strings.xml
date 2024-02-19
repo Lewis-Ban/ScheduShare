@@ -13,4 +13,10 @@
     <string name="summary_button">SUMMARY</string>
     <string name="friends_button">FRIENDS</string>
     <string name="whats_coming_next_header">Whats Coming Next</string>
+    <string name="return_button_from_events_page">Back</string>
+    <string name="create_button_from_events_page">Create</string>
+    <string name="weekly_schedule_from_events_page">Weekly Schedule</string>
+    <string name="return_button_from_summary_page">Back</string>
+    <string name="summary_title">Summary</string>
+    <string name="total_time_summary_page">Total Time: </string>
 </resources>
