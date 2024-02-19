@@ -30,17 +30,17 @@
 
         <!-- Events Activity -->
         <activity
-            android:name=".EventsActivity"
+            android:name=".EventsList"
             android:theme="@style/Theme.ScheduShare.NoActionBar" />
 
         <!-- Summary Activity -->
         <activity
-            android:name=".SummaryActivity"
+            android:name=".Summary"
             android:theme="@style/Theme.ScheduShare.NoActionBar" />
 
         <!-- Friends Activity -->
         <activity
-            android:name=".FriendsActivity"
+            android:name=".FriendsList"
             android:theme="@style/Theme.ScheduShare.NoActionBar" />
 
     </application>

@@ -24,17 +24,17 @@ class Home : AppCompatActivity() {
         }
 
         eventsButton.setOnClickListener {
-            val intent = Intent(this, EventsActivity::class.java)
+            val intent = Intent(this, EventsList::class.java)
             startActivity(intent)
         }
 
         summaryButton.setOnClickListener {
-            val intent = Intent(this, SummaryActivity::class.java)
+            val intent = Intent(this, Summary::class.java)
             startActivity(intent)
         }
 
         friendsButton.setOnClickListener {
-            val intent = Intent(this, FriendsActivity::class.java)
+            val intent = Intent(this, FriendsList::class.java)
             startActivity(intent)
         }
     }

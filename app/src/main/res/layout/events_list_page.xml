@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/goBackEventButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/return_button_from_events_page"
@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/eventCreateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/create_button_from_events_page"
@@ -23,16 +23,20 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="326dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="68dp"
         android:text="@string/weekly_schedule_from_events_page"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="126dp"
-        android:textStyle="bold" />
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/redBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.064"
+        tools:ignore="MissingConstraints,TextSizeCheck" />
 
     <View
         android:id="@+id/redBox"
