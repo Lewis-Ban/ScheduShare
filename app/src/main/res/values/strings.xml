@@ -8,7 +8,7 @@
     <string name="forgot_id_or_password">Forget ID/Password?</string>
     <string name="logout_button">LOG OUT</string>
     <string name="upcoming_events_button">Upcoming Events</string>
-    <string name="time">17:30:00</string>
+    <string name="ex_time">17:30:00</string>
     <string name="events_button">EVENTS</string>
     <string name="summary_button">SUMMARY</string>
     <string name="friends_button">FRIENDS</string>
@@ -19,4 +19,11 @@
     <string name="return_button_from_summary_page">Back</string>
     <string name="summary_title">Summary</string>
     <string name="total_time_summary_page">Total Time: </string>
+    <string name="save_button">Save</string>
+    <string name="name">Name</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="memo">Memo</string>
+    <string name="create_button">Create</string>
+    <string name="delete_button">Delete</string>
 </resources>

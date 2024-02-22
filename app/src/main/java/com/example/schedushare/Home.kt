@@ -8,7 +8,7 @@ import android.widget.Button
 class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.home_page)
 
         // Initialize click listener
         val logoutButton = findViewById<Button>(R.id.logoutButton)

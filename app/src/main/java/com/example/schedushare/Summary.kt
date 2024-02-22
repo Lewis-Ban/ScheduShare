@@ -7,7 +7,7 @@ import android.widget.Button
 class Summary : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.events_summary_page)
+        setContentView(R.layout.summary_page)
 
         // Initialize click listener
         val goBackButton = findViewById<Button>(R.id.goBackButton)

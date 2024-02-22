@@ -43,6 +43,16 @@
             android:name=".FriendsList"
             android:theme="@style/Theme.ScheduShare.NoActionBar" />
 
+        <!-- Add Event Activity -->
+        <activity
+            android:name=".AddEvent"
+            android:theme="@style/Theme.ScheduShare.NoActionBar" />
+
+        <!-- Edit Event Activity -->
+        <activity
+            android:name=".EditEvent"
+            android:theme="@style/Theme.ScheduShare.NoActionBar" />
+
     </application>
 
 </manifest>
