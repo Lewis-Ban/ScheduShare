@@ -64,7 +64,7 @@
 
         <TextView
             android:id="@+id/helpTextView"
-            android:layout_width="197dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:text="@string/help_button"
