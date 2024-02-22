@@ -22,11 +22,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/scheduleTitle"
         android:layout_width="326dp"
         android:layout_height="51dp"
         android:layout_marginTop="68dp"
         android:text="@string/weekly_schedule_from_events_page"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -38,37 +39,82 @@
         app:layout_constraintVertical_bias="0.064"
         tools:ignore="MissingConstraints,TextSizeCheck" />
 
+    <TextView
+        android:id="@+id/schedule1"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="108dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:importantForAutofill="no"
+        android:text="@string/tmp_schedule1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/redBox"
+        app:layout_constraintTop_toBottomOf="@+id/scheduleTitle"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck,TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/schedule2"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="244dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:importantForAutofill="no"
+        android:text="@string/tmp_schedule2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/greenBox"
+        app:layout_constraintTop_toBottomOf="@+id/scheduleTitle"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck,TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/schedule3"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="392dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:importantForAutofill="no"
+        android:text="@string/tmp_schedule3"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/blueBox"
+        app:layout_constraintTop_toBottomOf="@+id/scheduleTitle"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck,TextSizeCheck" />
+
     <View
         android:id="@+id/redBox"
         android:layout_width="50dp"
         android:layout_height="100dp"
-        android:layout_marginTop="244dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="108dp"
         android:background="#FF5050"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/scheduleTitle" />
 
     <View
         android:id="@+id/greenBox"
         android:layout_width="50dp"
         android:layout_height="100dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="244dp"
         android:background="#5EFF50"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/redBox" />
+        app:layout_constraintTop_toBottomOf="@+id/scheduleTitle" />
 
     <View
         android:id="@+id/blueBox"
         android:layout_width="50dp"
         android:layout_height="100dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="392dp"
         android:background="#50FFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/greenBox" />
+        app:layout_constraintTop_toBottomOf="@+id/scheduleTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

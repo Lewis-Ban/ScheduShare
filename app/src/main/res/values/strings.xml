@@ -26,4 +26,8 @@
     <string name="memo">Memo</string>
     <string name="create_button">Create</string>
     <string name="delete_button">Delete</string>
+    <string name="tmp_schedule1">Ulf\n01/29/2024\n17:30–19:30</string>
+    <string name="tmp_schedule2">Eve\n01/31/2024\n15:30–19:30</string>
+    <string name="tmp_schedule3">Nad\n02/01/2024\n08:30–11:30</string>
+    <string name="tmpMsg">Editing Page (Temp Msg)</string>
 </resources>
