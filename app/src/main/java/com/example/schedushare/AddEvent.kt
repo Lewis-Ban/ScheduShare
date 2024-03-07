@@ -9,8 +9,8 @@ class AddEvent : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.addevent_page)
 
-        val goBackEventButton = findViewById<Button>(R.id.goBackEventButton)
-        val eventCreateButton = findViewById<Button>(R.id.eventCreateButton)
+        val goBackEventButton = findViewById<Button>(R.id.goBackFriendListButton)
+        val eventCreateButton = findViewById<Button>(R.id.addFriendButton)
 
         goBackEventButton.setOnClickListener {
             val intent = Intent(this, EventsList::class.java)

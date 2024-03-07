@@ -12,8 +12,8 @@ class EventsList : AppCompatActivity() {
         setContentView(R.layout.events_list_page)
 
         // Initialize click listener
-        val goBackEventButton = findViewById<Button>(R.id.goBackEventButton)
-        val eventCreateButton = findViewById<Button>(R.id.eventCreateButton)
+        val goBackEventButton = findViewById<Button>(R.id.goBackFriendListButton)
+        val eventCreateButton = findViewById<Button>(R.id.addFriendButton)
         val scheduleLink1 = findViewById<TextView>(R.id.schedule1)
         val scheduleLink2 = findViewById<TextView>(R.id.schedule2)
         val scheduleLink3 = findViewById<TextView>(R.id.schedule3)

@@ -9,8 +9,8 @@ class EditEvent : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.editevent_page)
 
-        val goBackEventButton = findViewById<Button>(R.id.goBackEventButton)
-        val eventSaveButton = findViewById<Button>(R.id.eventSaveButton)
+        val goBackEventButton = findViewById<Button>(R.id.goBackFriendListButton)
+        val eventSaveButton = findViewById<Button>(R.id.friendAddButton)
         val deleteButton = findViewById<Button>(R.id.delete_button)
 
 
