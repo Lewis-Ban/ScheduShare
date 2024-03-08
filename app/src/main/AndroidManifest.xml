@@ -38,7 +38,7 @@
             android:name=".Summary"
             android:theme="@style/Theme.ScheduShare.NoActionBar" />
 
-        <!-- Friends Activity -->
+        <!-- Friends List Activity -->
         <activity
             android:name=".FriendsList"
             android:theme="@style/Theme.ScheduShare.NoActionBar" />
@@ -51,6 +51,21 @@
         <!-- Edit Event Activity -->
         <activity
             android:name=".EditEvent"
+            android:theme="@style/Theme.ScheduShare.NoActionBar" />
+
+        <!-- Edit Friend Activity -->
+        <activity
+            android:name=".EditFriend"
+            android:theme="@style/Theme.ScheduShare.NoActionBar" />
+
+        <!-- Add Friend Activity  -->
+        <activity
+            android:name=".AddFriend"
+            android:theme="@style/Theme.ScheduShare.NoActionBar" />
+
+        <!-- Friend Calendar Activity -->
+        <activity
+            android:name=".FriendCalendar"
             android:theme="@style/Theme.ScheduShare.NoActionBar" />
 
     </application>

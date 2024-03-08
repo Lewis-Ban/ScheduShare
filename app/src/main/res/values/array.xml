@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sections">
+        <item >Amanda</item>
+        <item >Shichiro</item>
+        <item >Staas</item>
+        <item >Ulf</item>
+        <item >Evelina</item>
+        <item >Nadine</item>
+        <item >Tobias</item>
+    </string-array>
+</resources>
