@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "396474587033",
+    "firebase_url": "https://schedushare-default-rtdb.firebaseio.com",
     "project_id": "schedushare",
     "storage_bucket": "schedushare.appspot.com"
   },

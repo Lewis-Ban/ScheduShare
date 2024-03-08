@@ -30,7 +30,6 @@
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
-        android:text="@string/upcoming_events_button"
         android:textAlignment="center"
         android:textSize="24sp" />
 
