@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3AAAA">
+    android:background="#F5F5DC">
 
     <Button
         android:id="@+id/goBackFriendListButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/dark_beige"
         android:text="@string/return_button_from_events_page"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -18,6 +19,7 @@
         android:id="@+id/addFriendButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/dark_beige"
         android:text="@string/create_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

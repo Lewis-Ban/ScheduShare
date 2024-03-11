@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/beige">
 
     <!-- Log Out Button -->
     <Button
@@ -15,6 +16,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@color/dark_beige"
         android:text="@string/logout_button" />
 
     <!-- Coming Event -->
@@ -57,8 +59,8 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="@string/events_button"
-            />
+            android:background="@color/dark_beige"
+            android:text="@string/events_button" />
 
         <Button
             android:id="@+id/summaryButton"
@@ -66,14 +68,15 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="@string/summary_button"
-            />
+            android:background="@color/dark_beige"
+            android:text="@string/summary_button" />
 
         <Button
             android:id="@+id/friendsButton"
             style="buttonBarButtonStyle"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@color/dark_beige"
             android:text="@string/friends_button" />
 
     </LinearLayout>
