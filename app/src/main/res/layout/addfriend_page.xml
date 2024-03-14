@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/dark_beige"
+        android:fontFamily="@font/merriweather_sans_light"
         android:text="@string/save_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/dark_beige"
+        android:fontFamily="@font/merriweather_sans_light"
         android:text="@string/return_button_from_events_page"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,35 +31,39 @@
         android:layout_width="370dp"
         android:layout_height="60dp"
         android:layout_marginTop="72dp"
+        android:autofillHints=""
         android:ems="10"
+        android:fontFamily="@font/merriweather_sans_light"
         android:inputType="text"
         android:text="@string/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="LabelFor"
-        android:autofillHints="" />
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/Relationship"
         android:layout_width="370dp"
         android:layout_height="120dp"
         android:layout_marginTop="24dp"
+        android:autofillHints=""
         android:ems="10"
+        android:fontFamily="@font/merriweather_sans_light"
         android:inputType="text"
         android:text="@string/relationship"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name"
-        tools:ignore="LabelFor"
-        android:autofillHints="" />
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/Description"
         android:layout_width="370dp"
         android:layout_height="180dp"
         android:layout_marginTop="36dp"
+        android:autofillHints=""
         android:ems="10"
+        android:fontFamily="@font/merriweather_sans_light"
         android:inputType="text"
         android:text="@string/description"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,6 +72,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Relationship"
         app:layout_constraintVertical_bias="0.012"
-        tools:ignore="LabelFor"
-        android:autofillHints="" />
+        tools:ignore="LabelFor" />
 </androidx.constraintlayout.widget.ConstraintLayout>

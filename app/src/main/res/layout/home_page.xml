@@ -17,6 +17,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:background="@color/dark_beige"
+        android:fontFamily="@font/merriweather_sans_light"
         android:text="@string/logout_button" />
 
     <!-- Coming Event -->
@@ -42,6 +43,7 @@
         android:layout_below="@id/comingEventTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
+        android:fontFamily="@font/merriweather_sans_light"
         android:text="@string/ex_time"
         android:textSize="34sp" />
 
@@ -60,6 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:background="@color/dark_beige"
+            android:fontFamily="@font/merriweather_sans_light"
             android:text="@string/events_button" />
 
         <Button
@@ -69,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:background="@color/dark_beige"
+            android:fontFamily="@font/merriweather_sans_light"
             android:text="@string/summary_button" />
 
         <Button
@@ -77,6 +81,7 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:background="@color/dark_beige"
+            android:fontFamily="@font/merriweather_sans_light"
             android:text="@string/friends_button" />
 
     </LinearLayout>
@@ -90,6 +95,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="31dp"
         android:layout_marginTop="85dp"
+        android:fontFamily="@font/merriweather_sans_light"
         android:text="@string/whats_coming_next_header"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
