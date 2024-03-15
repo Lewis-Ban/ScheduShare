@@ -44,7 +44,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
         android:fontFamily="@font/merriweather_sans_light"
-        android:text="@string/ex_time"
+        android:text="@string/date"
         android:textSize="34sp" />
 
     <LinearLayout

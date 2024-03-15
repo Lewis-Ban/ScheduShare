@@ -30,8 +30,8 @@ class Home : AppCompatActivity() {
         docRef.get()
             .addOnSuccessListener { document ->
                 if (document != null) {
-                    taskname = document.getString("name").toString()
-                    t = document.getDate("startTime").toString()
+                    taskname = document.getString("eventname").toString()
+                    t = document.getString("eventtime").toString()
                     comingEvent.text = taskname
                     comingTime.text = t
                 }
