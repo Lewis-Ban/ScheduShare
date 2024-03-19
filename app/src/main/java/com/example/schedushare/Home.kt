@@ -36,13 +36,6 @@ class Home : AppCompatActivity() {
                 }
             }
 
-
-
-
-
-
-
-
         // Click listener
         logoutButton.setOnClickListener {
             val intent = Intent(this, Login::class.java)
