@@ -3,10 +3,8 @@ package com.example.schedushare
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
@@ -47,7 +45,7 @@ class AddEvent : AppCompatActivity() {
                 { view, year, monthOfYear, dayOfMonth ->
                     // on below line we are setting
                     // date to our edit text.
-                    val dat = (dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year)
+                    val dat = (year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString())
                     edate.setText(dat)
                 },
                 // on below line we are passing year, month
@@ -72,9 +70,16 @@ class AddEvent : AppCompatActivity() {
                 true)
             mTimePicker.show()
         }
-
-
+        var eventcount = 1
         val db = Firebase.firestore
+        val query = db.collection("Events").document("example").collection("events")
+            query.get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    eventcount = eventcount + 1
+                }
+            }
+
 
         data class Newevent(
             val eventname: String? = null,
@@ -98,9 +103,8 @@ class AddEvent : AppCompatActivity() {
                 ememo.text.toString(),
             )
 
-            db.collection("Events").document("example").collection("events").document("event1").set(newe, SetOptions.merge())
-                .addOnSuccessListener { Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!") }
-                .addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error writing document", e) }
+            db.collection("Events").document("example").collection("events").document("event"+ eventcount.toString()).set(newe, SetOptions.merge())
+
 
             val intent = Intent(this, EventsList::class.java)
             startActivity(intent)

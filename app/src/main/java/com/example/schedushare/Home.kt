@@ -26,19 +26,18 @@ class Home : AppCompatActivity() {
         val db = Firebase.firestore
         var taskname: String
         var t: String
-        val docRef = db.collection("Events").document("example")
-        docRef.get()
-            .addOnSuccessListener { document ->
-                if (document != null) {
+        db.collection("Events").document("example").collection("events").orderBy("eventdate").limit(1).get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
                     taskname = document.getString("eventname").toString()
-                    t = document.getString("eventtime").toString()
+                    t = (document.getString("eventdate").toString() +" "+ document.getString("eventtime").toString())
                     comingEvent.text = taskname
                     comingTime.text = t
                 }
             }
-            .addOnFailureListener { exception ->
 
-            }
+
+
 
 
 
