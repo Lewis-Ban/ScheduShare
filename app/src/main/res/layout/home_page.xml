@@ -33,6 +33,7 @@
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
+        android:text="@string/no_events"
         android:textAlignment="center"
         android:textSize="24sp" />
 
@@ -44,7 +45,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
         android:fontFamily="@font/merriweather_sans_light"
-        android:text="@string/date"
         android:textSize="34sp" />
 
     <LinearLayout
