@@ -19,7 +19,7 @@ class EventsList : AppCompatActivity() {
 
         val db = FirebaseFirestore.getInstance()
 
-        db.collection("Events")
+        db.collection("Events").document("example").collection("events")
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {

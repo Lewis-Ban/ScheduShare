@@ -73,7 +73,7 @@ class AddEvent : AppCompatActivity() {
         var eventcount = 1
         val db = Firebase.firestore
         val query = db.collection("Events").document("example").collection("events")
-            query.get()
+        query.get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
                     eventcount = eventcount + 1
