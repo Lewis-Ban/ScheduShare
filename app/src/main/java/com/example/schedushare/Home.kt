@@ -7,6 +7,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,11 +25,12 @@ class Home : AppCompatActivity() {
         val comingTime = findViewById<TextView>(R.id.timeSavedTextView)
         // creating a variable
         // for firebase firestore.
-
+        val currentDate: String = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+        comingEvent.text = currentDate
         val db = Firebase.firestore
         var taskname: String
         var t: String
-        db.collection("Events").document("example").collection("events").orderBy("eventdate").limit(1).get()
+        db.collection("Events").document("example").collection("events").whereGreaterThanOrEqualTo("eventdate", currentDate).orderBy("eventdate").limit(1).get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
                     taskname = document.getString("eventname").toString()
