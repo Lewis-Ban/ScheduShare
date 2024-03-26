@@ -65,7 +65,7 @@ class EditEvent : AppCompatActivity() {
             val hour = mcurrentTime.get(Calendar.HOUR_OF_DAY)
             val minute = mcurrentTime.get(Calendar.MINUTE)
             val mTimePicker = TimePickerDialog(this, { timePicker, selectedHour, selectedMinute ->
-                val tim = ("$selectedHour:$selectedMinute")
+                val tim = (String.format("%02d", selectedHour)+":"+String.format("%02d", selectedMinute))
                 etime.setText(tim)
             },
                 hour,

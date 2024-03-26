@@ -62,7 +62,7 @@ class AddEvent : AppCompatActivity() {
             val hour = mcurrentTime.get(Calendar.HOUR_OF_DAY)
             val minute = mcurrentTime.get(Calendar.MINUTE)
             val mTimePicker = TimePickerDialog(this, { timePicker, selectedHour, selectedMinute ->
-                val tim = ("$selectedHour:$selectedMinute")
+                val tim = (String.format("%02d", selectedHour)+":"+String.format("%02d", selectedMinute))
                 etime.setText(tim)
             },
                 hour,
@@ -76,7 +76,7 @@ class AddEvent : AppCompatActivity() {
         query.get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
-                    eventcount = eventcount + 1
+                    eventcount += 1
                 }
             }
 
@@ -103,7 +103,7 @@ class AddEvent : AppCompatActivity() {
                 ememo.text.toString(),
             )
 
-            db.collection("Events").document("example").collection("events").document("event"+ eventcount.toString()).set(newe, SetOptions.merge())
+            db.collection("Events").document("example").collection("events").document("event$eventcount").set(newe, SetOptions.merge())
 
 
             val intent = Intent(this, EventsList::class.java)
