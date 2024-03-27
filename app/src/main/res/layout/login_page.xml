@@ -78,17 +78,26 @@
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/forgetTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/beige"
-            android:fontFamily="@font/merriweather_sans_light"
-            android:text="@string/forgot_id_or_password"
-            android:textAlignment="viewEnd"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/forgetTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/loginButton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="178dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="6dp"
+        android:layout_toEndOf="@+id/linearLayout"
+        android:background="@color/beige"
+        android:fontFamily="@font/merriweather_sans_light"
+        android:text="@string/forgot_id_or_password"
+        android:textAlignment="viewEnd"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
 
 </RelativeLayout>
 
