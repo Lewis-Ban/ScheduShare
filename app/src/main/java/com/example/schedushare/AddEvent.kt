@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
 import com.google.firebase.Firebase
-import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.firestore
 import java.util.Calendar
 
@@ -45,7 +44,7 @@ class AddEvent : AppCompatActivity() {
                 { view, year, monthOfYear, dayOfMonth ->
                     // on below line we are setting
                     // date to our edit text.
-                    val dat = (String.format("%02d", year) + "-" + String.format("%02d", monthOfYear) + "-" + String.format("%02d", dayOfMonth))
+                    val dat = (String.format("%02d", year) + "-" + String.format("%02d", monthOfYear + 1) + "-" + String.format("%02d", dayOfMonth))
                     edate.setText(dat)
                 },
                 // on below line we are passing year, month
@@ -103,7 +102,7 @@ class AddEvent : AppCompatActivity() {
                 ememo.text.toString(),
             )
 
-            db.collection("Events").document("example").collection("events").document("event$eventcount").set(newe, SetOptions.merge())
+            db.collection("Events").document("example").collection("events").document("event$eventcount").set(newe)
 
 
             val intent = Intent(this, EventsList::class.java)

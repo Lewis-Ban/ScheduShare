@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 import java.text.SimpleDateFormat
-import java.util.Date
+import java.util.Calendar
 import java.util.Locale
 
 class Home : AppCompatActivity() {
@@ -23,10 +23,13 @@ class Home : AppCompatActivity() {
         val friendsButton = findViewById<Button>(R.id.friendsButton)
         val comingEvent = findViewById<TextView>(R.id.comingEventTextView)
         val comingTime = findViewById<TextView>(R.id.timeSavedTextView)
-        // creating a variable
-        // for firebase firestore.
-        val currentDate: String = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
-        comingEvent.text = currentDate
+
+        // set the format for the date
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val currentCal = Calendar.getInstance() // get the curretn date
+        val currentDate = dateFormat.format(currentCal.time)
+
+        // creating a variable for firebase firestore
         val db = Firebase.firestore
         var taskname: String
         var t: String
