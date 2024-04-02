@@ -35,4 +35,6 @@
     <string name="relationship">Relationship</string>
     <string name="calendar">Calendar</string>
     <string name="no_events">No Events</string>
+    <string name="back_to_friends_list_button">Back</string>
+    <string name="friends_event_list_title">'s Schedule</string>
 </resources>
