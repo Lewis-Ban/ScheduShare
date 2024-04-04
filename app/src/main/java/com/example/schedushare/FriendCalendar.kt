@@ -4,9 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-
 class FriendCalendar : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.friend_calendar_page)
@@ -15,7 +13,7 @@ class FriendCalendar : AppCompatActivity() {
 
         // Click listener
         goBackButton.setOnClickListener {
-            val intent = Intent(this, Home::class.java)
+            val intent = Intent(this, FriendsList::class.java)
             startActivity(intent)
             finish()
         }
