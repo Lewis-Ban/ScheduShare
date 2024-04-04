@@ -71,7 +71,7 @@ class AddEvent : AppCompatActivity() {
         }
         var eventcount = 1
         val db = Firebase.firestore
-        val query = db.collection("Events").document("example").collection("events")
+        val query = db.collection("Events").document(userNm).collection("events")
         query.get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
@@ -102,7 +102,7 @@ class AddEvent : AppCompatActivity() {
                 ememo.text.toString(),
             )
 
-            db.collection("Events").document("example").collection("events").document("event$eventcount").set(newe)
+            db.collection("Events").document(userNm).collection("events").document("event$eventcount").set(newe)
 
 
             val intent = Intent(this, EventsList::class.java)

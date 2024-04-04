@@ -31,7 +31,7 @@ class EventsList : AppCompatActivity() {
 
         // creating a variable for firebase firestore
         val db = FirebaseFirestore.getInstance()
-        db.collection("Events").document("example").collection("events").whereGreaterThanOrEqualTo("eventdate", currentDate).whereLessThanOrEqualTo("eventdate",toDate).orderBy("eventdate")
+        db.collection("Events").document(userNm).collection("events").whereGreaterThanOrEqualTo("eventdate", currentDate).whereLessThanOrEqualTo("eventdate",toDate).orderBy("eventdate")
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {

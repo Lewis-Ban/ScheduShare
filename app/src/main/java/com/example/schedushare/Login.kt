@@ -1,28 +1,69 @@
 package com.example.schedushare
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.firestore
+
+var userNm:String = ""
+var userPss:String = ""
 
 class Login : AppCompatActivity() {
+    @SuppressLint("CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_page)
 
         val loginButton = findViewById<Button>(R.id.loginButton)
-        loginButton.setOnClickListener {
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
-            finish()
-        }
-    }
+        val username = findViewById<EditText>(R.id.idEditText)
+        val userpass = findViewById<EditText>(R.id.passwordEditText)
 
-    private fun authenticateUser(username: String, password: String): Boolean {
-        //Log in process
-        return username.isNotEmpty() && password.isNotEmpty()
+        loginButton.setOnClickListener {
+            userNm = username.text.toString()
+            userPss = userpass.text.toString()
+            val db = Firebase.firestore
+            db.collection("Users").whereEqualTo("userID", userNm).get()
+                .addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        if(document.getString("Password") == userPss) {
+                            val mySnackbar = Snackbar.make(findViewById<Button>(R.id.loginButton), "Login Successful", Snackbar.LENGTH_LONG)
+                            mySnackbar.show()
+                            val intent = Intent(this, Home::class.java)
+                            startActivity(intent)
+                            finish()
+                        }
+                        else{
+                            val mySnackbar = Snackbar.make(findViewById<Button>(R.id.loginButton), "Wrong Password ", Snackbar.LENGTH_SHORT)
+                            mySnackbar.show()
+                        }
+                    }
+                }
+
+        }
+
+
     }
+//    fun authenticateUser(username: String, password: String): Boolean {
+//        //Log in process
+//        var validP = false
+//        val db = Firebase.firestore
+//        db.collection("Users").whereEqualTo("userID", username).get()
+//            .addOnSuccessListener { documents ->
+//                for (document in documents) {
+//                    if(document.getString("Password") == password) {
+//                        validP = true
+//                        val mySnackbar = Snackbar.make(findViewById<Button>(R.id.loginButton), "$validP", Snackbar.LENGTH_SHORT)
+//                        mySnackbar.show()
+//                    }
+//                }
+//            }
+//        return validP
+//    }
 
 
 //    private lateinit var auth: FirebaseAuth

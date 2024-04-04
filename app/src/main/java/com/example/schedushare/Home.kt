@@ -33,7 +33,7 @@ class Home : AppCompatActivity() {
         val db = Firebase.firestore
         var taskname: String
         var t: String
-        db.collection("Events").document("example").collection("events").whereGreaterThanOrEqualTo("eventdate", currentDate).orderBy("eventdate").limit(1).get()
+        db.collection("Events").document(userNm).collection("events").whereGreaterThanOrEqualTo("eventdate", currentDate).orderBy("eventdate").limit(1).get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
                     taskname = document.getString("eventname").toString()
