@@ -55,11 +55,6 @@ class Home : AppCompatActivity() {
             startActivity(intent)
         }
 
-        summaryButton.setOnClickListener {
-            val intent = Intent(this, Summary::class.java)
-            startActivity(intent)
-        }
-
         friendsButton.setOnClickListener {
             val intent = Intent(this, FriendsList::class.java)
             startActivity(intent)
