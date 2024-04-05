@@ -19,7 +19,7 @@ class FriendsList : AppCompatActivity() {
 
         val db = FirebaseFirestore.getInstance()
 
-        db.collection("Friends").document("example").collection("examplefriend")
+        db.collection("Friends").document(userNm).collection(userNm+"friend")
             .get()
             .addOnSuccessListener { result ->
                 val friendList = ArrayList<String>()

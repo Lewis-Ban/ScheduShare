@@ -31,13 +31,15 @@ class EditFriend : AppCompatActivity() {
 
         val db = FirebaseFirestore.getInstance()
 
-        db.collection("Friends").document("example").collection("examplefriend").document(friendId)
+        db.collection("Friends").document(userNm).collection(userNm+"friend").document(friendId)
             .get()
             .addOnSuccessListener { document ->
                 if (document != null && document.exists()) {
                     val friendName = document.getString("name")
                     val friendRelationship = document.getString("relationship")
                     val friendUserID = document.getString("userID")
+                    idClick = friendUserID.toString()
+                    nameClick = friendName.toString()
                     friendNameEditText.setText(friendName)
                     friendRelationshipEditText.setText(friendRelationship)
                     friendUserIDEditText.setText(friendUserID)
