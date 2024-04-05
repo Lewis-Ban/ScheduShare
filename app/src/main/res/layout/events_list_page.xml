@@ -50,8 +50,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/scheduleTitle">
-
+        app:layout_constraintTop_toBottomOf="@id/scheduleTitle"
+        android:padding="16dp"
+        android:layout_margin="8dp"
+        tools:ignore="SpeakableTextPresentCheck">
         <LinearLayout
             android:id="@+id/eventsLayout"
             android:layout_width="match_parent"

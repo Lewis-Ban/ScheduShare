@@ -2,11 +2,11 @@ package com.example.schedushare
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.FirebaseFirestore
 class FriendsList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,17 +17,35 @@ class FriendsList : AppCompatActivity() {
         val addFriendButton = findViewById<Button>(R.id.addFriendButton)
         val friendListView = findViewById<ListView>(R.id.friendList)
 
-        //ListView
-        val friendArray = resources.getStringArray(R.array.sections)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, friendArray)
-        friendListView.adapter = adapter
+        val db = FirebaseFirestore.getInstance()
 
-        friendListView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
-            val selectedItem = friendArray[position]
-            val intent = Intent(this, EditFriend::class.java)
-            intent.putExtra("friendName", selectedItem)
-            startActivity(intent)
-        }
+        db.collection("Friends").document("example").collection("examplefriend")
+            .get()
+            .addOnSuccessListener { result ->
+                val friendList = ArrayList<String>()
+                val friendIdList = ArrayList<String>()
+                for (document in result) {
+                    val friendName = document.getString("name")
+                    val friendId = document.id
+                    if (friendName != null) {
+                        friendList.add(friendName)
+                        friendIdList.add(friendId)
+                    }
+                }
+
+                val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, friendList)
+                friendListView.adapter = adapter
+
+                for (i in friendList.indices) {
+                    friendListView.getChildAt(i)?.tag = friendIdList[i]
+                }
+                friendListView.setOnItemClickListener { _, _, position, _ ->
+                    val selectedFriendId = friendIdList[position]
+                    val intent = Intent(this, EditFriend::class.java)
+                    intent.putExtra("friendId", selectedFriendId)
+                    startActivity(intent)
+                }
+            }
 
         // Click listener
         goBackButton.setOnClickListener {

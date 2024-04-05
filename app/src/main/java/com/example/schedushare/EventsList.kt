@@ -11,6 +11,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
+import android.view.LayoutInflater
 
 class EventsList : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
@@ -24,7 +25,7 @@ class EventsList : AppCompatActivity() {
 
         // set the format for the date
         val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-        val currentCal = Calendar.getInstance() // get the curretn date
+        val currentCal = Calendar.getInstance() // get the current date
         val currentDate = dateFormat.format(currentCal.time)
         currentCal.add(Calendar.DATE, 7) // add seven days to the current date
         val toDate = dateFormat.format(currentCal.time)
@@ -39,9 +40,12 @@ class EventsList : AppCompatActivity() {
                     val eventDate = document.getString("eventdate")
                     val eventTime = document.getString("eventtime")
 
-                    val eventTextView = TextView(this)
+                    //Box for event list <-- Need to apply space between boxes, and elevation(shadow on boxes)
+                    val eventItemView = LayoutInflater.from(this).inflate(R.layout.event_items_box, null)
+
+                    val eventTextView = eventItemView.findViewById<TextView>(R.id.text_event_item)
                     eventTextView.text = "Event: $eventName\nDate: $eventDate\nTime: $eventTime"
-                    eventsLayout.addView(eventTextView)
+                    eventsLayout.addView(eventItemView)
 
                     eventTextView.setOnClickListener {
                         val intent = Intent(this, EditEvent::class.java)
