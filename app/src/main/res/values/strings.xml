@@ -5,7 +5,7 @@
     <string name="login_button">Login</string>
     <string name="schedushare_logo">ScheduShare Logo</string>
     <string name="help_button">Need Help?</string>
-    <string name="forgot_id_or_password">Forget ID/Password?</string>
+    <string name="forgot_id_or_password">Forgot ID/Password</string>
     <string name="logout_button">LOG OUT</string>
     <string name="upcoming_events_button">Upcoming Events</string>
     <string name="ex_time">17:30:00</string>
