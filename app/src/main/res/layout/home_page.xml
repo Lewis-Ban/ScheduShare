@@ -73,7 +73,7 @@
             android:layout_marginEnd="16dp"
             android:background="@color/dark_beige"
             android:fontFamily="@font/merriweather_sans_light"
-            android:text="@string/summary_button" />
+            android:text="@string/home_button" />
 
         <Button
             android:id="@+id/friendsButton"
