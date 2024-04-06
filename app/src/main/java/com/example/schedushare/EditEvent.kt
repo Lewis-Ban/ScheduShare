@@ -10,8 +10,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
-import com.google.firebase.Firebase
-import com.google.firebase.firestore.firestore
+import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Calendar
 
 class EditEvent : AppCompatActivity() {
@@ -23,7 +22,6 @@ class EditEvent : AppCompatActivity() {
         val goBackEventButton = findViewById<Button>(R.id.goBackFriendListButton)
         val eventSaveButton = findViewById<Button>(R.id.friendAddButton)
         val deleteButton = findViewById<Button>(R.id.delete_button)
-
 
         val ename = findViewById<EditText>(R.id.editName)
         val edate = findViewById<EditText>(R.id.editDate)
@@ -74,8 +72,33 @@ class EditEvent : AppCompatActivity() {
             mTimePicker.show()
         }
 
+        //Get passed event id
+        val eventId = intent.getStringExtra("eventId")
 
-        val db = Firebase.firestore
+        val db = FirebaseFirestore.getInstance()
+
+        if (eventId != null) {
+            db.collection("Events").document(userNm).collection("events").document(eventId)
+                .get()
+                .addOnSuccessListener { document ->
+                    if (document != null && document.exists()) {
+                        val eventName = document.getString("eventname")
+                        val eventDate = document.getString("eventdate")
+                        val eventTime = document.getString("eventtime")
+                        val eventMemo = document.getString("eventmemo")
+
+                        ename.setText(eventName)
+                        edate.setText(eventDate)
+                        etime.setText(eventTime)
+                        ememo.setText(eventMemo)
+                    } else {
+                        Log.d(TAG, "No such document")
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.d(TAG, "get failed with ", exception)
+                }
+        }
 
         data class Newevent(
             val eventname: String? = null,
@@ -84,32 +107,39 @@ class EditEvent : AppCompatActivity() {
             val eventmemo: String? = null,
         )
 
-            goBackEventButton.setOnClickListener {
-                val intent = Intent(this, EventsList::class.java)
-                startActivity(intent)
-                finish()
-            }
+        goBackEventButton.setOnClickListener {
+            val intent = Intent(this, EventsList::class.java)
+            startActivity(intent)
+            finish()
+        }
 
-            eventSaveButton.setOnClickListener {
-                val newe = Newevent(
-                    ename.text.toString(),
-                    edate.text.toString(),
-                    etime.text.toString(),
-                    ememo.text.toString(),
+        eventSaveButton.setOnClickListener {
+            val newe = Newevent(
+                ename.text.toString(),
+                edate.text.toString(),
+                etime.text.toString(),
+                ememo.text.toString(),
                 )
 
-                db.collection("Events").document("example").set(newe)
-                    .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!") }
-                    .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
+            db.collection("Events").document("example").set(newe)
+                .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!") }
+                .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
 
-                val intent = Intent(this, EventsList::class.java)
-                startActivity(intent)
+            val intent = Intent(this, EventsList::class.java)
+            startActivity(intent)
+        }
+
+        deleteButton.setOnClickListener {
+            if (eventId != null) {
+                db.collection("Events").document(userNm).collection("events").document(eventId)
+                    .delete()
+                    .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully deleted!") }
+                    .addOnFailureListener { e -> Log.w(TAG, "Error deleting document", e) }
             }
 
-            deleteButton.setOnClickListener {
-                val intent = Intent(this, EventsList::class.java)
-                startActivity(intent)
-            }
-
+            val intent = Intent(this, EventsList::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }
