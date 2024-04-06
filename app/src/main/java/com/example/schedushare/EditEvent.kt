@@ -44,7 +44,7 @@ class EditEvent : AppCompatActivity() {
             val datePickerDialog = DatePickerDialog(
                 // on below line we are passing context.
                 this,
-                { view, year, monthOfYear, dayOfMonth ->
+                { _, year, monthOfYear, dayOfMonth ->
                     // on below line we are setting
                     // date to our edit text.
                     val dat = (String.format("%02d", year) + "-" + String.format("%02d", monthOfYear) + "-" + String.format("%02d", dayOfMonth))
@@ -63,7 +63,7 @@ class EditEvent : AppCompatActivity() {
             val mcurrentTime = Calendar.getInstance()
             val hour = mcurrentTime.get(Calendar.HOUR_OF_DAY)
             val minute = mcurrentTime.get(Calendar.MINUTE)
-            val mTimePicker = TimePickerDialog(this, { timePicker, selectedHour, selectedMinute ->
+            val mTimePicker = TimePickerDialog(this, { _, selectedHour, selectedMinute ->
                 val tim = (String.format("%02d", selectedHour)+":"+String.format("%02d", selectedMinute))
                 etime.setText(tim)
             },
