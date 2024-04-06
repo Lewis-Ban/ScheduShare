@@ -10,6 +10,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Calendar
 
@@ -114,19 +115,43 @@ class EditEvent : AppCompatActivity() {
         }
 
         eventSaveButton.setOnClickListener {
-            val newe = Newevent(
-                ename.text.toString(),
-                edate.text.toString(),
-                etime.text.toString(),
-                ememo.text.toString(),
-                )
+            val updatedName = ename.text.toString()
+            val updatedDate = edate.text.toString()
+            val updatedTime = etime.text.toString()
+            val updatedMemo = ememo.text.toString()
 
-            db.collection("Events").document("example").set(newe)
-                .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!") }
-                .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
+            if (updatedName.isNotEmpty() || updatedDate.isNotEmpty() || updatedTime.isNotEmpty() || updatedMemo.isNotEmpty()) {
+                val updatedEvent = hashMapOf<String, Any>()
 
-            val intent = Intent(this, EventsList::class.java)
-            startActivity(intent)
+                if (updatedName.isNotEmpty()) {
+                    updatedEvent["eventname"] = updatedName
+                }
+
+                if (updatedDate.isNotEmpty()) {
+                    updatedEvent["eventdate"] = updatedDate
+                }
+
+                if (updatedTime.isNotEmpty()) {
+                    updatedEvent["eventtime"] = updatedTime
+                }
+
+                if (updatedMemo.isNotEmpty()) {
+                    updatedEvent["eventmemo"] = updatedMemo
+                }
+
+                if (eventId != null) {
+                    db.collection("Events").document(userNm).collection("events").document(eventId)
+                        .update(updatedEvent)
+                        .addOnSuccessListener {
+                            finish()
+                        }
+                        .addOnFailureListener { exception ->
+                            Toast.makeText(this, "Error updating event: ${exception.message}", Toast.LENGTH_SHORT).show()
+                        }
+                }
+            } else {
+                Toast.makeText(this, "There are no changes to update", Toast.LENGTH_SHORT).show()
+            }
         }
 
         deleteButton.setOnClickListener {
