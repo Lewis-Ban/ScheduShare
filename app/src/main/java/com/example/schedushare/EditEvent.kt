@@ -101,12 +101,12 @@ class EditEvent : AppCompatActivity() {
                 }
         }
 
-        data class Newevent(
-            val eventname: String? = null,
-            val eventdate: String? = null,
-            val eventtime: String? = null,
-            val eventmemo: String? = null,
-        )
+//        data class Newevent(
+//            val eventname: String? = null,
+//            val eventdate: String? = null,
+//            val eventtime: String? = null,
+//            val eventmemo: String? = null,
+//        )
 
         goBackEventButton.setOnClickListener {
             val intent = Intent(this, EventsList::class.java)
