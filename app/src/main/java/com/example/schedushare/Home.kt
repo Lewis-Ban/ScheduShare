@@ -37,7 +37,7 @@ class Home : AppCompatActivity() {
             .addOnSuccessListener { documents ->
                 for (document in documents) {
                     taskname = document.getString("eventname").toString()
-                    t = (document.getString("eventdate").toString() +"\n "+ document.getString("eventtime").toString())
+                    t = (document.getString("eventdate").toString() +"\n       "+ document.getString("eventtime").toString())
                     comingEvent.text = taskname
                     comingTime.text = t
                 }
