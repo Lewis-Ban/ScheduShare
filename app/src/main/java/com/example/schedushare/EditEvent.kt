@@ -47,7 +47,7 @@ class EditEvent : AppCompatActivity() {
                 { _, year, monthOfYear, dayOfMonth ->
                     // on below line we are setting
                     // date to our edit text.
-                    val dat = (String.format("%02d", year) + "-" + String.format("%02d", monthOfYear) + "-" + String.format("%02d", dayOfMonth))
+                    val dat = (String.format("%02d", year) + "-" + String.format("%02d", monthOfYear + 1) + "-" + String.format("%02d", dayOfMonth))
                     edate.setText(dat)
                 },
                 // on below line we are passing year, month

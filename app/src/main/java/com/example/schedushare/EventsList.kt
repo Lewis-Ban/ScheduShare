@@ -35,7 +35,7 @@ class EventsList : AppCompatActivity() {
         val db = FirebaseFirestore.getInstance()
 
         db.collection("Events").document(userNm).collection("events")
-            .whereGreaterThanOrEqualTo("eventdate", currentDate).whereLessThanOrEqualTo("eventdate",toDate).orderBy("eventdate")
+            .whereGreaterThanOrEqualTo("eventdate", currentDate).orderBy("eventdate")
             .get()
             .addOnSuccessListener { result ->
                 val eventList = ArrayList<String>()
