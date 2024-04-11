@@ -28,8 +28,8 @@ class EventsList : AppCompatActivity() {
         val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
         val currentCal = Calendar.getInstance() // get the current date
         val currentDate = dateFormat.format(currentCal.time)
-        currentCal.add(Calendar.DATE, 7) // add seven days to the current date
-        val toDate = dateFormat.format(currentCal.time)
+        //currentCal.add(Calendar.DATE, 7) // add seven days to the current date
+        //val toDate = dateFormat.format(currentCal.time)
 
         // creating a variable for firebase firestore
         val db = FirebaseFirestore.getInstance()
