@@ -7,10 +7,10 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Calendar
 
@@ -143,6 +143,8 @@ class EditEvent : AppCompatActivity() {
                     db.collection("Events").document(userNm).collection("events").document(eventId)
                         .update(updatedEvent)
                         .addOnSuccessListener {
+                            val refresh = Intent(this, EventsList::class.java)
+                            startActivity(refresh)
                             finish()
                         }
                         .addOnFailureListener { exception ->
