@@ -3,9 +3,10 @@ package com.example.schedushare
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
+import android.view.LayoutInflater
 import android.widget.Button
-import android.widget.ListView
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
@@ -14,15 +15,14 @@ import java.util.Locale
 
 
 class EventsList : AppCompatActivity() {
-    private lateinit var adapter: ArrayAdapter<String>
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.events_list_page)
 
         val goBackEventButton = findViewById<Button>(R.id.goBackFriendListButton)
         val eventCreateButton = findViewById<Button>(R.id.addFriendButton)
-        val eventsListView = findViewById<ListView>(R.id.eventsListView)
+        val eventsListView = findViewById<LinearLayout>(R.id.eventsListView)
 
         // set the format for the date
         val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
@@ -52,21 +52,23 @@ class EventsList : AppCompatActivity() {
                         eventList.add(eventDateTime)
                         eventIdList.add(eventId)
                     }
-                }
-                adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, eventList)
-                eventsListView.adapter = adapter
 
-                for (i in eventList.indices) {
-                    eventsListView.getChildAt(i)?.tag = eventIdList[i]
-                }
-                eventsListView.setOnItemClickListener { _, _, position, _ ->
-                    val selectedEventId = eventIdList[position]
-                    val intent = Intent(this@EventsList, EditEvent::class.java)
-                    intent.putExtra("eventId", selectedEventId)
-                    startActivity(intent)
+                    val eventItemView = LayoutInflater.from(this).inflate(R.layout.event_items_box, null)
+
+                    val eventTextView = eventItemView.findViewById<TextView>(R.id.text_event_item)
+                    eventTextView.text = "Event: $eventName\nDate: $eventDate\nTime: $eventTime"
+                    eventsListView.addView(eventItemView)
+
+                    for (i in 0 until eventsListView.childCount) {
+                        eventsListView.getChildAt(i).setOnClickListener {
+                            val selectedEventId = eventIdList[i]
+                            val intent = Intent(this@EventsList, EditEvent::class.java)
+                            intent.putExtra("eventId", selectedEventId)
+                            startActivity(intent)
+                        }
+                    }
                 }
             }
-
         goBackEventButton.setOnClickListener {
             val intent = Intent(this, Home::class.java)
             startActivity(intent)

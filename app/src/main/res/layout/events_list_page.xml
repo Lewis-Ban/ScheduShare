@@ -43,20 +43,24 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints,TextSizeCheck" />
 
-    <ListView
-        android:id="@+id/eventsListView"
-        android:layout_width="403dp"
-        android:layout_height="582dp"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="8dp"
-        android:layout_marginTop="16dp"
-        android:entries="@array/sections"
+        android:layout_marginBottom="568dp"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/scheduleTitle"
+        app:layout_constraintTop_toBottomOf="@+id/scheduleTitle"
         tools:ignore="SpeakableTextPresentCheck">
 
-    </ListView>
+        <LinearLayout
+            android:id="@+id/eventsListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
